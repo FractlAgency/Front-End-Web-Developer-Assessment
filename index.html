@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/map-pie-styles.css"></link>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Visualization</h1>
+        </header>
+        <hr>
+        <div class="row">
+            <h2>Map</h2>
+            <div id="tooltip"></div>
+            <!-- div to hold tooltip. -->
+            <svg width="960" height="600" id="statesvg"></svg>
+            <!-- svg to hold the map. -->
+        </div>
+        <hr>
+
+        <div class="row">
+            <h2>Pie charts</h2>
+            <div class="btnGroup">
+                <button id="chartOne" class="genderBtn">Men</button>
+                <button id="chartTwo" class="genderBtn">Women</button>
+            </div>
+        </div>
+        <div class="row" class="bottom-border">
+            <div class="col-md-6">
+                <svg width="400" height="300" id="ageGroup1"></svg>
+                <p class="ageDisplay">AgeGroup [19 to 17]</p>
+            </div>
+
+            <div class="col-md-6">
+                <svg width="400" height="300" id="ageGroup2"></svg>
+                <p class="ageDisplay">AgeGroup [28 to 36]</p>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            &copy; 2018 Bhagya Raj
+        </footer>
+    </div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="js/uStates.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/pie.js"></script>
+
+</body>
+
+</html>
