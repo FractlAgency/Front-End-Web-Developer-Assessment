@@ -1,0 +1,21 @@
+path:hover{
+    cursor: pointer;
+  }
+  #path2 {
+    fill: none !important;
+    stroke: #A9A9A9 !important;
+    cursor: default;
+  }
+  #info-tip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  

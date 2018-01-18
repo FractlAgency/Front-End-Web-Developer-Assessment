@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <style>
+        h3 {
+       margin-left: 100px;
+       color: red;
+      }
+
+      .but {
+       width: 100px;
+       height: 35px;
+       border:2px darkred solid;
+       color: red;
+       background-color: papayawhip;
+       font-weight: bold;
+       font-size: 1.2em;
+       border-radius:10px;
+      }
+      
+      .men {
+        text-align: right;
+        vertical-align: bottom;
+      }
+      .women {
+        text-align: left;
+      }
+      .tab {
+        text-align: center;
+      }
+     
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.setOnLoadCallback(drawChart);
+
+      
+      function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['ready', 0.04],
+          ['somewhat ready', 0.33],
+          ['not ready', 0.63]
+        ]);
+
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'Topping');
+        data1.addColumn('number', 'Slices');
+        data1.addRows([
+          ['ready', 0.12],
+          ['somewhat ready', 0.36],
+          ['not ready', 0.52]
+        ]);
+
+        var options = {'width':600,
+                       'height':400};
+        var options1 = {'width':600,
+                       'height':400};
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart1.draw(data1, options1);
+
+       
+      }
+    </script>
+    
+  </head>
+
+  <body>
+  
+    <table >
+      <tr>
+         <td class="men"><button class="but">Men</button></td> 
+         <td class="women"><a href="chart.html"><button class="but">Women</button></a></td>
+      </tr>
+      <tr class="tab">
+        <td ><div id="chart_div"></div></td>
+        <td ><div id="chart_div1"></div></td>
+      </tr>
+      <tr>
+        <td><h3 class="di"> Age group between 19 to 27 </h3></td>
+        <td><h3 class="di"> Age group between 28 to 36 </h3></td>
+      </tr>
+    </table>
+  
+  </body>
+</html>
+    
