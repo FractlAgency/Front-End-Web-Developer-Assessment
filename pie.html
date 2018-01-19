@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function(){
+       var xxButton = document.getElementById("femButton");
+       var xyButton = document.getElementById("menButton");
+       var xxChart = document.getElementById("femCharts");
+       var xyChart = document.getElementById("menCharts");
+       
+        $(xxButton).click(function(){
+            $(xxChart).show();
+            $(xyChart).hide();
+        });
+       
+        $(xyButton).click(function(){
+            $(xyChart).show();
+            $(xxChart).hide();
+        });
+   });
+</script>
+<body>
+    
+<div style="display: block; padding-left: 95px;">
+    <button id="femButton" style="background-color: lightpink; padding: 5px; margin: 3px;">Women</button>
+    <button id="menButton" style="background-color: lightblue; padding: 5px; margin: 3px;">Men</button>
+</div>
+<div id="femCharts" style="display:block;">
+    <div id="femChart1" style="margin: 0; display: inline-block;"></div><div id="femChart2" style="margin: 0; display: inline-block"></div>
+</div>
+<div id ="menCharts" style="display:none;">
+    <div id="menChart1" style="margin: 0; display: inline-block;"></div><div id="menChart2" style="margin: 0; display: inline-block"></div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawFemCharts);
+google.charts.setOnLoadCallback(drawMenCharts);
+    
+// Draw the fem charts & set values
+function drawFemCharts() {
+  var femData1 = google.visualization.arrayToDataTable([
+  ['Preparedness', 'Percent Value'],
+  ['Ready', .08],
+  ['Somewhat Ready', .33],
+  ['Not Ready', .59],
+  ]);
+  
+  var femData2 = google.visualization.arrayToDataTable([
+  ['Preparedness', 'Percent Value'],
+  ['Ready', .18],
+  ['Somewhat Ready', .53],
+  ['Not Ready', .29],  
+  ]);
+
+  // Add title & set dimensions
+  var femOptions1 = {'title':'WOMEN: AGES 19 - 27', 'width':500, 'height':400};
+  var femOptions2 = {'title':'WOMEN: AGES 28 - 36', 'width':500, 'height':400};
+
+  // Display pies inside the <div> elements with id="femChart1" & "femChart2"
+  var femChart1 = new google.visualization.PieChart(document.getElementById('femChart1'));
+  var femChart2 = new google.visualization.PieChart(document.getElementById('femChart2'));
+ 
+  femChart1.draw(femData1, femOptions1);
+  femChart2.draw(femData2, femOptions2);
+}
+    
+// Draw the men charts & set values
+function drawMenCharts() {
+  var menData1 = google.visualization.arrayToDataTable([
+  ['Preparedness', 'Percent Value'],
+  ['Ready', .04],
+  ['Somewhat Ready', .33],
+  ['Not Ready', .63],
+  ]);
+  
+  var menData2 = google.visualization.arrayToDataTable([
+  ['Preparedness', 'Percent Value'],
+  ['Ready', .12],
+  ['Somewhat Ready', .36],
+  ['Not Ready', .52],  
+  ]);
+
+  // Add title & set dimensions
+  var menOptions1 = {'title':'MEN: AGES 19 - 27', 'width':500, 'height':400};
+  var menOptions2 = {'title':'MEN: AGES 28 - 36', 'width':500, 'height':400};
+
+  // Display pies inside the <div> elements with id="menChart1" & "menChart2"
+  var menChart1 = new google.visualization.PieChart(document.getElementById('menChart1'));
+  var menChart2 = new google.visualization.PieChart(document.getElementById('menChart2'));
+ 
+  menChart1.draw(menData1, menOptions1);
+  menChart2.draw(menData2, menOptions2);
+}
+</script>
+
+</body>
+</html>
