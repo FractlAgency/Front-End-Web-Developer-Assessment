@@ -1,11 +1,10 @@
-/* .svg-container {
+.svg-container {
 	position: relative;
 	padding-bottom: 100%;
 }
 
 .svg-content {
-    display: inline-block;
 	position: absolute;
 	top: 0;
 	left: 0;
-} */
+}
