@@ -1,6 +1,6 @@
 let populationData;
 
-d3.csv("http://download1588.mediafire.com/007xq7uwnn2g/r78ri0qz65tvhkn/data-states.csv",    function(error, data) {
+d3.csv("https://download1588.mediafire.com/007xq7uwnn2g/r78ri0qz65tvhkn/data-states.csv",    function(error, data) {
         if (error) throw error;
         console.log(data);
         populationData = data;
@@ -23,5 +23,3 @@ usMap.addEventListener('mouseover', (event) => {
     }
 
 });
-
-document.querySelector('svg').style.width = '100';
