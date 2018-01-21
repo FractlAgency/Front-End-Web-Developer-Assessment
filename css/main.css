@@ -1,6 +1,7 @@
 .svg-container {
 	position: relative;
 	padding-bottom: 100%;
+    max-width: 100%;
 }
 
 .svg-content {
