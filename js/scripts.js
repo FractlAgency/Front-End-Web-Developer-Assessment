@@ -45,9 +45,12 @@ const getPopulationPercent = function(stateAbbv) {
 var setColors = function() {
     stateList.forEach(function(state) {
         if(state.id !== 'frames') {
-            state.style.fill = 'rgb(42,130,206)';
+            state.style.fill = 'rgb(25,170,217)';
             state.style.fillOpacity = getPopulationPercent(state.id);
         }
+        // else if (state.id === ) {
+        //
+        // }
     });
 }
 
