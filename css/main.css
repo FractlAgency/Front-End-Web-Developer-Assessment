@@ -1,3 +1,14 @@
+
+body {
+    background: #252831;
+    color: #fff;
+}
+
+.header__title {
+    font-weight: 200;
+}
+
+
 .svg-container {
 	position: relative;
 	padding-bottom: 100%;
