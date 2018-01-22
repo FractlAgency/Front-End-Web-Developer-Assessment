@@ -1,4 +1,8 @@
 
+html {
+    font-size: 16px;
+}
+
 body {
     background: #252831;
 }
@@ -28,4 +32,9 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+
+.copyright {
+    font-size: .8rem;
 }
