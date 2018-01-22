@@ -7,29 +7,43 @@ body {
     background: #252831;
 }
 
+.wrapper {
+    position: relative;
+    z-index: 10;
+}
+
 .bg-banner {
 
-    background: linear-gradient(transparent, #252831), (url('../img/sunset-flag.jpg');
+    background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
+    width: 100%;
+    height: 300px;
+    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 300px;
+    /* height: 300px; */
+    opacity: .5;
+    /* position: absolute; */
+    /* width: 100%; */
+    z-index: 1;
 }
 
 .card {
-    background-color: transparent;
+    background: transparent;
 }
 
+
 .list-group-item {
-    background-color: transparent;
+    background: transparent;
 }
 
 .header__title {
     font-weight: 200;
 }
 
-
-
+.header__subtitle {
+    opacity: .75;
+}
 
 .svg-container {
 	position: relative;
