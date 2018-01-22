@@ -1,7 +1,14 @@
 
 body {
     background: #252831;
-    color: #fff;
+}
+
+.card {
+    background: none;
+}
+
+.list-group-item {
+    background: none;
 }
 
 .header__title {
