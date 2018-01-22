@@ -34,10 +34,6 @@ body {
     font-weight: 200;
 }
 
-/* .header__subtitle {
-    opacity: .75;
-} */
-
 .text-transparent {
     opacity: .65;
 }
@@ -46,12 +42,9 @@ body {
     background: transparent;
 }
 
-
 .list-group-item {
     background: transparent;
 }
-
-
 
 .svg-container {
 	position: relative;
@@ -69,11 +62,9 @@ body {
     background: #1E2126;
     display: inline-block;
 }
-
     .infotip__name {
         font-size: 1.2rem;
     }
-
     .infotip__info {
         font-size: .8rem;
     }
