@@ -8,10 +8,16 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body class="text-white">
+
+            <div class="bg-banner">
+    
+            </div>
+
+
         <header class="pt-5 pb-3">
             <div class="container">
                 <h2 class="h6 text-secondary text-uppercase">Frontend Web Developer Assessment</h2>
-                <h1 class="header__title border-bottom h2 pb-2">2017 USA Population Data</h1>
+                <h1 class="header__title border-bottom border-secondary h2 pb-2">2017 USA Population Data</h1>
             </div>
         </header>
 
@@ -167,24 +173,24 @@
 
         <section>
             <div class="container">
-                <form class="border-top pt-2 mb-4">
+                <form class="border-top border-secondary pt-2 mb-4">
                     <legend>Filter data by:</legend>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="" id="" value="" checked>
-                        <label class="form-check-label" for="">
+                    <div class="form-check py-1 mb-3">
+                        <input id="percent-population" class="form-check-input" type="radio" name="data_filter" id="percent-population" value="" checked>
+                        <label class="form-check-label" for="percent-population">
                             % of Population
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="" id="" value="">
-                        <label class="form-check-label" for="">
+                    <div class="form-check py-1 mb-3">
+                        <input class="form-check-input" type="radio" name="data_filter" id="med-household-income" value="">
+                        <label class="form-check-label" for="med-household-income">
                             Median Household Income
                         </label>
                     </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="" id="" value="">
-                        <label class="form-check-label" for="">
+                    <div class="form-check py-1">
+                        <input class="form-check-input" type="radio" name="data_filter" id="percent-income" value="">
+                        <label class="form-check-label" for="percent-income">
                             % of Income
                         </label>
                     </div>
@@ -195,17 +201,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="">Top 5 States / </h3>
-                                <span class="card-subtitle">% of Population</span>
+                        <div class="card border-secondary">
+                            <div class="card-header border-secondary">
+                                <h3 class="font-weight-light">Top 5 States / </h3>
+                                <span class="card-subtitle text-secondary">% of Population</span>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">California</li>
-                                <li class="list-group-item">Texas</li>
-                                <li class="list-group-item">Florida</li>
-                                <li class="list-group-item">Michigan</li>
-                                <li class="list-group-item">New York</li>
+                                <li class="list-group-item border-secondary">California</li>
+                                <li class="list-group-item border-secondary">Texas</li>
+                                <li class="list-group-item border-secondary">Florida</li>
+                                <li class="list-group-item border-secondary">Michigan</li>
+                                <li class="list-group-item border-secondary">New York</li>
                             </ul>
                         </div>
                     </div>
@@ -242,7 +248,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p class="copyright text-center pt-4 pb-2 m-0">Copyright &copy; 2018 Brandon King</p>
+                        <p class="copyright text-center pt-5 pb-3 m-0">Copyright &copy; 2018 Brandon King</p>
                     </div>
 
                 </div>
