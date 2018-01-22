@@ -34,7 +34,7 @@ const getPopulationPercent = function(stateAbbv) {
     for (const i in populationData) {
         if(populationData[i]['State Abbv'] === stateAbbv) {
             const percentage = parseInt(populationData[i]['Percent of Population'].slice(0,2)) / 100;
-            return percentage.toString();
+            return (1 - percentage).toString();
         }
     }
 }
