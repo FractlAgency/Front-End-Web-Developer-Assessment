@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alex Steele Fractl assessment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="pie/visualization.js"></script>
+  </head>
+  <body>
+    <div id="tooltip"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome</h1>
+          <p class="lead">This is a data visualization assessment for Fractl</p>
+          <hr class="my-4">
+          <h3>States by Percent of Population</h3>
+          <button class="btn" style="background-color: #D4EFDF;">Low (36%)</button>
+          <button class="btn" style="background-color: #145A32; color: white;">High (60%)</button>
+          <div id="map"></div>
+        </div>
+      </div>
+
+      <h3>Preparedness of women/men by age group</h3>
+      <hr class="my-4">
+      <div class="row justify-content-center">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active" id="womenBtn">
+            <input type="radio" name="options" autocomplete="off" checked> Women
+          </label>
+          <label class="btn btn-secondary" id="menBtn">
+            <input type="radio" name="options" autocomplete="off"> Men
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="card bg-light mb-3 text-center">
+            <h5 class="card-header">Ages 19 - 27</h5>
+            <div class="card-body">
+              <div class="chart-container">
+                <div id="womenAge1"></div>
+                <div id="menAge1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-6">
+          <div class="card bg-light mb-3 text-center">
+            <h5 class="card-header">Ages 28 - 36</h5>
+            <div class="card-body">
+              <div class="chart-container" >
+                <div id="womenAge2"></div>
+                <div id="menAge2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <a
+          href="https://github.com/alexsteele110"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        <img src="https://i.imgur.com/yfWEKaX.png" alt="GitHub" />
+      </a>
+      <p>&copy;2018 Alex Steele</p>
+    </div>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="map/visualization.js"></script>
+    <script>
+    // making map tooltip follow mouse movement, init drawing of charts
+$(document)
+  .bind('mousemove', e => {
+    $('#tooltip').css({
+      left: e.pageX - 100,
+      top: e.pageY - 140
+    });
+  })
+  .ready(() => drawCharts());
+// allowing toggle between men and women for pie charts
+
+$('#menBtn').click(() => {
+  $('#womenAge1, #womenAge2').hide();
+  $('#menAge1, #menAge2').show('slow');
+});
+
+$('#womenBtn').click(() => {
+  $('#menAge1, #menAge2').hide();
+  $('#womenAge1, #womenAge2').show('slow');
+});
+
+// re-calling drawing of charts on resize to make them responsive
+$(window).resize(() => drawCharts());
+
+</script>
+  </body>
+</html>
