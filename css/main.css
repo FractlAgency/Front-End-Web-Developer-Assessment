@@ -8,11 +8,11 @@ body {
 }
 
 .card {
-    background: none;
+    background-color: transparent;
 }
 
 .list-group-item {
-    background: none;
+    background-color: transparent;
 }
 
 .header__title {
