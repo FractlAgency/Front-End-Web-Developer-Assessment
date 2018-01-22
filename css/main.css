@@ -65,13 +65,18 @@ body {
 	left: 0;
 }
 
-.infotip__name {
-    font-size: 1.2rem;
+.infotip {
+    background: #1E2126;
+    display: inline-block;
 }
 
-.infotip__info {
-    font-size: .8rem;
-}
+    .infotip__name {
+        font-size: 1.2rem;
+    }
+
+    .infotip__info {
+        font-size: .8rem;
+    }
 
 
 .copyright {
