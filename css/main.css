@@ -1,10 +1,12 @@
 
 html {
     font-size: 16px;
+    font-weight: 300;
 }
 
 body {
     background: #252831;
+
 }
 
 .wrapper {
@@ -16,7 +18,7 @@ body {
 
     background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
     width: 100%;
-    height: 300px;
+    height: 400px;
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
@@ -28,6 +30,18 @@ body {
     z-index: 1;
 }
 
+.header__title {
+    font-weight: 200;
+}
+
+/* .header__subtitle {
+    opacity: .75;
+} */
+
+.text-transparent {
+    opacity: .65;
+}
+
 .card {
     background: transparent;
 }
@@ -37,13 +51,7 @@ body {
     background: transparent;
 }
 
-.header__title {
-    font-weight: 200;
-}
 
-.header__subtitle {
-    opacity: .75;
-}
 
 .svg-container {
 	position: relative;
