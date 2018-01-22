@@ -1,3 +1,8 @@
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
+
 let populationData;
 
 d3.csv("https://raw.githubusercontent.com/FractlAgency/Front-End-Web-Developer-Assessment/master/data-states.csv",    function(error, data) {
