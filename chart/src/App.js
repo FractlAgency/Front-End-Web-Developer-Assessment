@@ -1,19 +1,89 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { VictoryPie, VictoryLegend } from 'victory';
 import './assets/App.css';
+import { group1, group2 } from 'util/groups';
 
-class App extends Component {
+class Example extends React.Component {
+  state = {
+    active: 'Women'
+  }
+
+  setActive(type) {
+    this.setState({ active: type });
+  }
+
+  filterByGender(group, gender) {
+    return group.filter(item => item.Gender === gender.toLowerCase());
+  }
+
+
   render() {
+    const legendData = [
+      { name: "Ready" }, { name: "Somewhat Ready" }, { name: "Not Ready" }
+    ];
+
     return (
+
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <button className="btn btn-green" onClick={this.setActive.bind(this, 'Women')}>Women</button>
+          <button className="btn btn-gold" onClick={this.setActive.bind(this, 'Men')}>Men</button>
+        </div>
+
+        <div className="pie-container">
+
+          <svg width={500} height={500} style={{ border: "1px solid #ccc" }}>
+            <VictoryLegend standalone={false}
+              colorScale={['#0088FE', '#00C49F', '#fea']}
+              x={20} y={370}
+              gutter={40}
+              title="Legend"
+              centerTitle
+              style={{ border: { stroke: "black" } }}
+              data={legendData}
+            />
+            <VictoryPie standalone={false}
+              animate={{
+                duration: 800
+              }}
+              data={this.filterByGender(group1, this.state.active)}
+              width={380} height={380}
+              padding={{
+                left: 120, bottom: 20, top: 20
+              }}
+              colorScale={['#0088FE', '#00C49F', '#fea']}
+              labels={(d) => Math.ceil(d.y * 100) + '%'}
+            />
+          </svg>
+
+
+          <svg width={500} height={500} style={{ border: "1px solid #ccc" }}>
+            <VictoryLegend standalone={false}
+              colorScale={['#0088FE', '#00C49F', '#fea']}
+              x={300} y={370}
+              gutter={40}
+              title="Legend"
+              centerTitle
+              style={{ border: { stroke: "black" } }}
+              data={legendData}
+            />
+            <VictoryPie standalone={false}
+              animate={{
+                duration: 800
+              }}
+              data={this.filterByGender(group2, this.state.active)}
+              width={380} height={380}
+              padding={{
+                left: 120, bottom: 20, top: 20
+              }}
+              colorScale={['#0088FE', '#00C49F', '#fea']}
+              labels={(d) => Math.ceil(d.y * 100) + '%'}
+            />
+          </svg>
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Example;
