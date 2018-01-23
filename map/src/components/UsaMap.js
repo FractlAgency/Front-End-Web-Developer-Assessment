@@ -40,7 +40,7 @@ class UsaMap extends React.Component {
     for (let stateKey in data) {
       const percentOfPopulation = parseInt(allStates[stateKey]["Percent of Population"].slice(0, 2), 10);
       // console.log(percentOfPopulation);
-      const useColor = colorType === 'gradient' ? gradient : multiColor;
+      const useColor = colorType === 'multiColor' ? multiColor : gradient;
       const path = <SingleState handleHover={handleHover} population={allStates[stateKey]["Percent of Population"]} key={stateKey} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={useColor[percentOfPopulation - min]} onClickState={this.stateClickHandler(stateKey)} />
       // const path = <SingleState handleHover={handleHover} population={allStates[stateKey]["Percent of Population"]} key={stateKey} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={COLORS[counter]} onClickState={this.stateClickHandler(stateKey)} />
       paths.push(path);

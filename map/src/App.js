@@ -40,9 +40,9 @@ class App extends Component {
     return (
       <div className="state-details">
         <h5>State: {upperCaseFirstLetter}</h5>
-        <h5>Median Household Income: {data["Median Household Income"]}</h5>
-        <h5>Percent of Income: {data["Percent of Income"]}</h5>
-        <h5>Percent of Population: {data["Percent of Population"]}</h5>
+        <h5 >Median Household Income: {data["Median Household Income"]}</h5>
+        <h5 className="text-muted">Percent of Income: {data["Percent of Income"]}</h5>
+        <h5 className="text-muted">Percent of Population: {data["Percent of Population"]}</h5>
       </div>
     )
   }
@@ -52,8 +52,8 @@ class App extends Component {
       <div className="state-details">
         <h5>State:</h5>
         <h5>Median Household Income:</h5>
-        <h5>Percent of Income:</h5>
-        <h5>Percent of Population:</h5>
+        <h5 className="text-muted">Percent of Income:</h5>
+        <h5 className="text-muted">Percent of Population:</h5>
       </div>
     )
   }
@@ -64,9 +64,10 @@ class App extends Component {
         <header className="App-header">
           <Tooltip />
           <div>
-            <button className="btn" onClick={this.setColor.bind(this, 'multiColor')}>Multi Color</button>
-            <button className="btn" onClick={this.setColor.bind(this, 'gradient')}>Gradient</button>
+            <button className="btn btn-green" onClick={this.setColor.bind(this, 'multiColor')}>Multi Color</button>
+            <button className="btn btn-blue" onClick={this.setColor.bind(this, 'gradient')}>Gradient</button>
           </div>
+
           {this.state.showHover.active ? this.renderOnHover(this.state.showHover.data) : this.renderNonSelected()}
         </header>
 
