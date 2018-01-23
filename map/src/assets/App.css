@@ -1,6 +1,11 @@
 @import url("./button.css");
 
-html,body{ margin:0; padding:0; height:100%; width:100%; }
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+}
 
 .App {
   text-align: center;
@@ -38,7 +43,7 @@ html,body{ margin:0; padding:0; height:100%; width:100%; }
 .state-details h5, .text-details {
   color: black;
   font-size: 1.3rem;
-  line-height: 150%;
+  line-height: 100%;
 }
 
 .grow {
