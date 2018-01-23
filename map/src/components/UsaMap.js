@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { gradient, rainbow } from 'util/colors';
+import { gradient, multiColor } from 'util/colors';
 import SingleState from './SingleState';
 import data from "util/data-states-dimensions";
 import dataStates from "util/data-states";
@@ -24,7 +24,7 @@ class UsaMap extends React.Component {
 
   stateClickHandler = (state) => {
     if (this.props.customize && this.props.customize[state] && this.props.customize[state].clickHandler) {
-      return this.props.customize[state].clickHandler
+      return this.props.customize[state].clickHandler;
     }
     return this.clickHandler;
   }
@@ -40,7 +40,7 @@ class UsaMap extends React.Component {
     for (let stateKey in data) {
       const percentOfPopulation = parseInt(allStates[stateKey]["Percent of Population"].slice(0, 2), 10);
       // console.log(percentOfPopulation);
-      const useColor = colorType === 'rainbow' ? rainbow : gradient;
+      const useColor = colorType === 'gradient' ? gradient : multiColor;
       const path = <SingleState handleHover={handleHover} population={allStates[stateKey]["Percent of Population"]} key={stateKey} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={useColor[percentOfPopulation - min]} onClickState={this.stateClickHandler(stateKey)} />
       // const path = <SingleState handleHover={handleHover} population={allStates[stateKey]["Percent of Population"]} key={stateKey} dimensions={data[stateKey]["dimensions"]} state={stateKey} fill={COLORS[counter]} onClickState={this.stateClickHandler(stateKey)} />
       paths.push(path);

@@ -64,7 +64,7 @@ class App extends Component {
         <header className="App-header">
           <Tooltip />
           <div>
-            <button className="btn" onClick={this.setColor.bind(this, 'rainbow')}>Rainbow</button>
+            <button className="btn" onClick={this.setColor.bind(this, 'multiColor')}>Multi Color</button>
             <button className="btn" onClick={this.setColor.bind(this, 'gradient')}>Gradient</button>
           </div>
           {this.state.showHover.active ? this.renderOnHover(this.state.showHover.data) : this.renderNonSelected()}
