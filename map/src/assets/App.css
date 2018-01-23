@@ -1,15 +1,17 @@
+@import url("./button.css");
+
+html,body{ margin:0; padding:0; height:100%; width:100%; }
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 2s linear;
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
 }
@@ -25,4 +27,36 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.root-container {
+  height:100%;
+  width:100%;
+}
+
+
+.state-details h5, .text-details {
+  color: black;
+  font-size: 1.3rem;
+  line-height: 150%;
+}
+
+.grow {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.30s ease-out;
+}
+
+.grow:hover,
+.grow:focus {
+  transform: scale(1.015);
+}
+
+.grow:active {
+  transform: scale(.90);
+}
+
+.pointer {
+  cursor: pointer;
 }
