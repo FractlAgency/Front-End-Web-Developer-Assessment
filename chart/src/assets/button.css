@@ -1,0 +1,45 @@
+.btn {
+    padding: 20px 40px;
+    margin: 10px 20px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    overflow: hidden;
+    border: 3px solid #fff;
+}
+.btn-green {
+    background: #aff546;
+    color: black;
+}
+.btn-green:hover {
+  background-color: #5c7635;
+  color: white; 
+}
+.btn-green:focus {
+  background-color: black;
+  color: white; 
+}
+.btn-gold {
+    background: #e1c140;
+    color: black;
+}
+.btn-gold:hover {
+  background-color: #766135;
+  color: white; 
+}
+.btn-gold:focus {
+  background-color: black;
+  color: white; 
+}
