@@ -31,13 +31,12 @@ class Example extends React.Component {
         </div>
 
         <div className="pie-container">
-
           <svg width={500} height={500} style={{ border: "1px solid #ccc" }}>
             <VictoryLegend standalone={false}
               colorScale={['#0088FE', '#00C49F', '#fea']}
               x={20} y={370}
               gutter={40}
-              title="Legend"
+              title="Age 19 to 27"
               centerTitle
               style={{ border: { stroke: "black" } }}
               data={legendData}
@@ -56,13 +55,12 @@ class Example extends React.Component {
             />
           </svg>
 
-
           <svg width={500} height={500} style={{ border: "1px solid #ccc" }}>
             <VictoryLegend standalone={false}
               colorScale={['#0088FE', '#00C49F', '#fea']}
               x={300} y={370}
               gutter={40}
-              title="Legend"
+              title="Age 28 to 36"
               centerTitle
               style={{ border: { stroke: "black" } }}
               data={legendData}
