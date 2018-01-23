@@ -9,6 +9,14 @@ body {
 
 }
 
+select {
+    max-width: 300px;
+}
+
+path {
+    transition: stroke-width 1s;
+}
+
 .wrapper {
     position: relative;
     z-index: 10;
@@ -72,4 +80,19 @@ body {
 
 .copyright {
     font-size: .8rem;
+}
+
+.state-is-active {
+    stroke: #d3d3d3;
+    stroke-width: 3;
+}
+
+
+
+
+
+@media screen and (min-width: 992px) {
+    .svg-container {
+        margin-bottom: -133px;
+    }
 }
