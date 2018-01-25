@@ -6,7 +6,6 @@ html {
 
 body {
     background: #252831;
-
 }
 
 select {
@@ -14,7 +13,7 @@ select {
 }
 
 path {
-    transition: stroke-width 2s;
+    transition: stroke 1s, stroke-width 2s;
 }
 
 .wrapper {
@@ -23,7 +22,6 @@ path {
 }
 
 .bg-banner {
-
     background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
     width: 100%;
     height: 600px;

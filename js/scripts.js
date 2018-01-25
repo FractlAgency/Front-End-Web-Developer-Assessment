@@ -53,7 +53,7 @@ selectEl.addEventListener('change', function() {
             //     dcEl.style.stroke = '';
             //     dcEl.style.strokeWidth = '0';
             // }
-            currentUsaState.style.stroke = '';
+            currentUsaState.style.stroke = 'transparent';
             currentUsaState.style.strokeWidth = '0';
             dcEl.style.stroke = '';
             dcEl.style.strokeWidth = '0';
