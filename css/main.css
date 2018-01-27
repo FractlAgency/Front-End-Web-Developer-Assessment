@@ -13,7 +13,7 @@ select {
 }
 
 path, circle {
-    transition: stroke 1s, stroke-width 2s;
+    transition: fill 1s, fill-opacity 1s, stroke 1s, stroke-width 2s;
 }
 
 .wrapper {
