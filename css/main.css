@@ -12,7 +12,7 @@ select {
     max-width: 300px;
 }
 
-path {
+path, circle {
     transition: stroke 1s, stroke-width 2s;
 }
 
