@@ -42,7 +42,8 @@ const getStateInfo = (stateAbbv, key) => {
 // calculate a state shapes fill-opacity value for a given statistic
 const calculateOpacity = {
     percentOfPopulation: (stateAbbv, key) => {
-        return (1 - Number(getStateInfo(stateAbbv, key).slice(0,2)) / 100).toString();
+        console.log((1 - Number(getStateInfo(stateAbbv, key).slice(0,2)) / 80).toString())
+        return (1 - Number(getStateInfo(stateAbbv, key).slice(0,2)) / 80).toString();
     },
 
     percentOfIncome: (stateAbbv, key) => {
