@@ -123,7 +123,7 @@ filterForm.addEventListener('change', (event) => {
             break;
         case 'green':
             statistic = 'Median Household Income'
-            color = 'rgb(71,255,179)';
+            color = 'rgb(102,255,179)'; // original value: rgb(71,255,179)
             break;
         default:
             console.log('Could not find correct data color');
