@@ -24,7 +24,7 @@ path, circle {
 .bg-banner {
     background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
     width: 100%;
-    height: 600px;
+    height: 450px;
     position: absolute;
     background-repeat: no-repeat;
     background-position: center;
@@ -48,6 +48,10 @@ path, circle {
 .card {
     background: transparent;
 }
+
+    .card-subtitle {
+        font-size: 18px;
+    }
 
 .list-group-item {
     background: transparent;

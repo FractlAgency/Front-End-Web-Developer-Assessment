@@ -1,3 +1,4 @@
+// variable the .csv data will be stored in
 let populationData;
 
 // array of elements representing all state shapes on the US map diagram
@@ -12,15 +13,27 @@ const selectEl = document.querySelector('select');
 let tooltipName = document.querySelector('.js-tooltip-name');
 let percentOfPopulation = document.querySelector('.js-pop-percent');
 let medHouseIncome = document.querySelector('.js-med-house-income');
-let percentOfIncome = document.querySelector('.js-percent-income');
+// let percentOfIncome = document.querySelector('.js-percent-income');
 
 // data filter form
 const filterForm = document.querySelector('#data-filter');
 
+// text representing current filter for "Top 5 States" section
+let cardSubtitle = document.querySelector('.js-card-subtitle');
+
 let currentUsaState = stateShapeList[0];
 
 // parse data from .csv file and assign it to a variable
-d3.csv("https://raw.githubusercontent.com/FractlAgency/Front-End-Web-Developer-Assessment/master/data-states.csv", function(error, data) {
+
+// d3.csv("https://raw.githubusercontent.com/FractlAgency/Front-End-Web-Developer-Assessment/master/data-states.csv", function(error, data) {
+//     if (error) throw error;
+//     console.log(data);
+//     populationData = data;
+//     setStateColors('Percent of Population');
+//     highlightInitialState();
+// });
+
+d3.csv("https://raw.githubusercontent.com/brandnk/Front-End-Web-Developer-Assessment/master/data-states-new.csv", function(error, data) {
     if (error) throw error;
     console.log(data);
     populationData = data;
@@ -42,17 +55,29 @@ const getStateInfo = (stateAbbv, key) => {
 // calculate a state shapes fill-opacity value for a given statistic
 const calculateOpacity = {
     percentOfPopulation: (stateAbbv, key) => {
-        console.log((1 - Number(getStateInfo(stateAbbv, key).slice(0,2)) / 80).toString())
-        return (1 - Number(getStateInfo(stateAbbv, key).slice(0,2)) / 80).toString();
+        console.log('calculating population percent')
+        console.log((1 - Number(getStateInfo(stateAbbv, key).slice(0,-1)) / 15).toString())
+        return (1 - Number(getStateInfo(stateAbbv, key).slice(0,-1)) / 15).toString();
     },
+    medHouseIncome: (stateAbbv, key) => {
+        // return (1 - Number(getStateInfo(stateAbbv, key).slice(0,1)) / 4).toString();
+        console.log('calculating med house income')
+        const str = getStateInfo(stateAbbv, 'Median Household Income');
 
-    percentOfIncome: (stateAbbv, key) => {
-        return (1 - Number(getStateInfo(stateAbbv, key).slice(0,1)) / 4).toString();
+        const num = Number(str.split('').filter(char => char !== '$' && char !== ',').join(''));
+
+        // return 1 - (num / 76260)
+        console.log(1 - (num / 86260))
+        return 1 - (num / 86260)
+
+        // console.log((1 - Number(getStateInfo(stateAbbv, 'Median Household Income').split('').filter(char => char !== '$' && char !== ',').join(''))).toFixed(4))
+        // let num = (1 - Number(getStateInfo(stateAbbv, 'Median Household Income').split('').filter(char => char !== '$' && char !== ',').join('')) / 76260).toFixed(4);
+
     }
 };
 
 // give each state shape element a fill color corresponding to the current data filter
-const setStateColors = (statistic, color = 'rgb(25,170,217)') => {
+const setStateColors = (statistic, color = 'rgb(28,192,245)') => {
     stateShapeList.forEach(state => {
         if(state.id !== 'frames') {
             // select colors to represent "% of Population" filter
@@ -64,13 +89,12 @@ const setStateColors = (statistic, color = 'rgb(25,170,217)') => {
                 else state.style.fillOpacity = calculateOpacity.percentOfPopulation(state.id, statistic);
             }
             // select colors to represent "% of Income" filter
-            else if (statistic === 'Percent of Income') {
+            else if (statistic === 'Median Household Income') {
                 if (state.id === 'DC1') {
                     state = DcEl;
-                    state.style.fillOpacity = calculateOpacity.percentOfIncome('DC', statistic);
+                    state.style.fillOpacity = calculateOpacity.medHouseIncome('DC', statistic);
                 }
-                // else state.style.fillOpacity = (1 - Number(getStateInfo(state.id, 'Percent of Population').slice(0,2)) / 100).toString();
-                else state.style.fillOpacity = calculateOpacity.percentOfIncome(state.id, statistic);
+                else state.style.fillOpacity = calculateOpacity.medHouseIncome(state.id, statistic);
             }
             state.style.fill = color;
         }
@@ -88,26 +112,23 @@ const setStateColors = (statistic, color = 'rgb(25,170,217)') => {
 // change color theme of map after selecting a differnt radio button filter
 filterForm.addEventListener('change', (event) => {
     const radioBtn = event.target;
+    cardSubtitle.textContent = radioBtn.nextElementSibling.textContent;
     let statistic;
     console.log(radioBtn);
     let color = radioBtn.dataset.color;
     switch (color) {
         case 'blue':
             statistic = 'Percent of Population'
-            color = 'rgb(25,170,217)';
+            color = 'rgb(28,192,245)'; // original value: rgb(25,170,217)
             break;
         case 'green':
-            statistic = 'Percent of Income'
-            color = 'rgb(25,192,135)';
+            statistic = 'Median Household Income'
+            color = 'rgb(71,255,179)';
             break;
-        // case 'red':
-        //     color = 'rgb(219,69,94)'
-        //     break;
         default:
             console.log('Could not find correct data color');
     }
     setStateColors(statistic, color);
-
 });
 
 
@@ -121,7 +142,7 @@ const updateTooltip = function(stateAbbv) {
     tooltipName.textContent = getStateInfo(stateAbbv, 'State Abbv');
     percentOfPopulation.textContent = getStateInfo(stateAbbv, 'Percent of Population');
     medHouseIncome.textContent = getStateInfo(stateAbbv, 'Median Household Income');
-    percentOfIncome.textContent = getStateInfo(stateAbbv, 'Percent of Income');
+    // percentOfIncome.textContent = getStateInfo(stateAbbv, 'Median Household Income');
 }
 
 // listen for change in value in select element
