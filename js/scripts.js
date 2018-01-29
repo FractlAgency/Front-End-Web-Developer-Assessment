@@ -24,12 +24,14 @@ const filterForm = document.querySelector('#data-filter');
 // text representing current filter for "Top 5 States" section
 let cardSubtitle = document.querySelector('.js-card-subtitle');
 
+// names for the Top 5 states
 const firstCardItem = document.querySelector('.js-card-item-first');
 const secondCardItem = document.querySelector('.js-card-item-second');
 const thirdCardItem = document.querySelector('.js-card-item-third');
 const fourthCardItem = document.querySelector('.js-card-item-fourth');
 const fifthCardItem = document.querySelector('.js-card-item-fifth');
 
+// values for each of the Top 5 states
 const firstCardValue = document.querySelector('.js-card-value-first');
 const secondCardValue = document.querySelector('.js-card-value-second');
 const thirdCardValue = document.querySelector('.js-card-value-third');
@@ -71,7 +73,7 @@ const calculateOpacity = {
 // highlights the input state's border
 const setBorderHighlight = (stateEl) => {
     // if (!stateEl.style.stroke || stateEl.style.stroke === 'transparent') {
-    if (!Number(stateEl.style.strokeWidth)) {
+    if (stateEl.style.strokeWidth === '' || stateEl.style.strokeWidth === '0') {
         stateEl.style.stroke = '#d3d3d3';
         stateEl.style.strokeWidth = '3';
     } else {
@@ -116,7 +118,6 @@ filterForm.addEventListener('change', (event) => {
     const radioBtn = event.target;
     cardSubtitle.textContent = radioBtn.nextElementSibling.textContent;
     let statistic;
-    console.log(radioBtn);
     let color = radioBtn.dataset.color;
     switch (color) {
         case 'blue':
@@ -139,7 +140,6 @@ const updateTooltip = function(stateAbbv) {
     percentOfPopulation.textContent = getStateInfo(stateAbbv, 'Percent of Population');
     medHouseIncome.textContent = getStateInfo(stateAbbv, 'Median Household Income');
 }
-
 
 // listen for when user selects an option in dropdown menu to highlight correct state and update tooltip
 selectEl.addEventListener('change', function() {
@@ -168,32 +168,34 @@ selectEl.addEventListener('change', function() {
 const setTop5 = (statistic) => {
     const sortedArr = [];
     for (let i = 0; i < populationData.length; i++) {
-        // add array to sortedArr with "% of population" value and state name
+        // add new array to sortedArr with statistic value and state name
         sortedArr.push([Number(populationData[i][statistic].split('').filter(char => char !== '$' && char !== ',' && char !== '%').join('')), populationData[i]['State']]);
     }
-    // sort array in descending order (greatest to least)
+    // sort array in descending order relative to statistic value (greatest to least)
     sortedArr.sort((a,b) => {
         return b[0] - a[0];
     });
-
+    // set the text of each of the Top 5 states
     firstCardItem.textContent = sortedArr[0][1];
     secondCardItem.textContent = sortedArr[1][1];
     thirdCardItem.textContent = sortedArr[2][1];
     fourthCardItem.textContent = sortedArr[3][1];
     fifthCardItem.textContent = sortedArr[4][1];
     if (statistic === 'Percent of Population') {
+        // set value of each of the Top 5 states
         firstCardValue.textContent = `${sortedArr[0][0]}%`;
         secondCardValue.textContent = `${sortedArr[1][0]}%`;
         thirdCardValue.textContent = `${sortedArr[2][0]}%`;
         fourthCardValue.textContent = `${sortedArr[3][0]}%`;
         fifthCardValue.textContent = `${sortedArr[4][0]}%`;
     }
+    // if statistic is for "Median Household Income"
     else {
         sortedArr.forEach((item, index, arr) => {
+            // turn value to string and then add a comma
             arr[index][0] = arr[index][0].toString();
             arr[index][0] = arr[index][0].slice(0,2) + ',' + arr[index][0].slice(2);
         });
-
         firstCardValue.textContent = `$${sortedArr[0][0]}`;
         secondCardValue.textContent = `$${sortedArr[1][0]}`;
         thirdCardValue.textContent = `$${sortedArr[2][0]}`;
