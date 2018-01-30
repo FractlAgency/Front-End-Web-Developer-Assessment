@@ -10,9 +10,30 @@
     <body class="text-white">
         <div class="bg-banner"></div>
         <div class="wrapper">
+
+            <div class="infotip infotip--desktop rounded p-2 mb-3">
+                <div class="d-flex">
+                    <div class="">
+                        <div class="infotip__name text-uppercase border-right border-secondary pr-2 py-1 js-tooltip-name">Ak</div>
+                    </div>
+                    <div class="infotip__info pl-2">
+                        <ul class="list-unstyled m-0">
+                            <li>
+                                <span class="">% of Population: </span>
+                                <span class="text-muted js-pop-percent">0.22%</span>
+                            </li>
+                            <li>
+                                <span class="">Med. Household Income: </span>
+                                <span class="text-muted js-med-house-income">$75,723</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- end .infotip -->
+
             <header class="container ">
                 <div class="row">
-                    <div class="col col-lg-10 ml-lg-5 mt-lg-4">
+                    <div class="col col-lg-10 ml-lg-5 mt-lg-5">
                         <div class="pt-5 pb-3">
                             <h2 class="header__subtitle h6 text-uppercase text-transparent">Frontend Web Developer Assessment</h2>
                             <h1 class="header__title h2 pb-2">2016 USA Population Data</h1>
@@ -21,16 +42,16 @@
                 </div>
             </header>
 
-            <div class="container">
+            <div class="container mt-lg-3">
                 <div class="row">
                     <div class="col col-lg-8 ml-lg-5">
                         <form>
                             <div class="form-group m-0">
                                 <legend for="exampleFormControlSelect1" class="m-0">Select a State </legend>
-                                <label class="font-weight-light text-transparent mb-3 d-md-none" for="input-select">Use the dropdown menu to select a state and reveal its statistics below</label>
-                                <label class="font-weight-light text-transparent mb-3 d-none d-md-block" for="input-select">Use the dropdown menu or put your cursor over a state to reveal its statistics below</label>
+                                <label class="font-weight-light text-transparent mb-3 d-lg-none" for="input-select">Use the dropdown menu to select a state and reveal its statistics below</label>
+                                <label class="font-weight-light text-transparent mb-3 d-none d-lg-block" for="input-select">Put your cursor over a state to reveal its statistics</label>
 
-                                <select class="form-control custom-select" id="input-select">
+                                <select class="form-control custom-select d-lg-none" id="input-select">
                                     <option>AK</option>
                                     <option>AL</option>
                                     <option>AR</option>
@@ -93,7 +114,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col d-flex flex-column">
-                        <div class="svg-container">
+                        <div class="svg-container mt-4 mb-3">
                             <?xml version="1.0" encoding="UTF-8" standalone="no"?>
                             <!-- original width: 959, original height: 593 -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="svg-content" viewBox="0 0 950 600" width="100%" height="100%">
@@ -168,7 +189,7 @@
                             </svg>
                         </div><!-- end .svg-container -->
 
-                        <div class="mx-auto">
+                        <div class="d-lg-none mx-auto">
                             <div class="infotip rounded p-2 mb-3">
                                 <div class="d-flex">
                                     <div class="">

@@ -2,7 +2,7 @@
 let populationData;
 
 // array of elements representing all state shapes on the US map diagram
-const stateShapeList = document.querySelectorAll('path');
+const stateList = document.querySelectorAll('path');
 
 // DC circle shape element
 const dcEl = document.querySelector('#DC2');
@@ -10,13 +10,18 @@ const dcEl = document.querySelector('#DC2');
 // select dropdown menu
 const selectEl = document.querySelector('select');
 
-// variable for keeping track of the currently highlighted state
-let currentState;
+const stateMap = document.querySelector('.svg-container');
 
-// elements for tooltip
-let tooltipName = document.querySelector('.js-tooltip-name');
-let percentOfPopulation = document.querySelector('.js-pop-percent');
-let medHouseIncome = document.querySelector('.js-med-house-income');
+// variable for keeping track of the currently highlighted state
+let currentState = '';
+
+// elements for tooltip values (mobile and desktop)
+let tooltipName = document.querySelectorAll('.js-tooltip-name');
+let percentOfPopulation = document.querySelectorAll('.js-pop-percent');
+let medHouseIncome = document.querySelectorAll('.js-med-house-income');
+
+// tooltip element for desktop devices
+const tooltip = document.querySelector('.infotip--desktop');
 
 // data filter form
 const filterForm = document.querySelector('#data-filter');
@@ -45,6 +50,7 @@ d3.csv("https://raw.githubusercontent.com/brandnk/Front-End-Web-Developer-Assess
     setStateColors('Percent of Population');
     highlightInitialState();
     setTop5('Percent of Population');
+    setDesktopFunctionality();
 });
 
 // returns a particular statistic for a given state
@@ -56,6 +62,13 @@ const getStateInfo = (stateAbbv, key) => {
         }
     }
     return data;
+}
+
+// determines if input is a state shape element
+const isStateEl = (element) => {
+    if (element.tagName === 'path' && element.id !== 'frames') {
+        return true;
+    }
 }
 
 // calculate a state shapes fill-opacity value for a given statistic
@@ -72,7 +85,6 @@ const calculateOpacity = {
 
 // highlights the input state's border
 const setBorderHighlight = (stateEl) => {
-    // if (!stateEl.style.stroke || stateEl.style.stroke === 'transparent') {
     if (stateEl.style.strokeWidth === '' || stateEl.style.strokeWidth === '0') {
         stateEl.style.stroke = '#d3d3d3';
         stateEl.style.strokeWidth = '3';
@@ -84,13 +96,17 @@ const setBorderHighlight = (stateEl) => {
 
 // highlights alaska state shape when page loads
 const highlightInitialState = () => {
-    currentState = document.querySelector('#AK');
-    setBorderHighlight(currentState);
+    if (window.innerWidth < 992) {
+        currentState = document.querySelector('#AK');
+        setBorderHighlight(currentState);
+    }
+
+
 }
 
 // give each state shape element a fill color and opacity corresponding to the current data filter
 const setStateColors = (statistic, color = 'rgb(25,152,217)') => {
-    stateShapeList.forEach(state => {
+    stateList.forEach(state => {
         if(state.id !== 'frames') {
             // select colors to represent "% of Population" filter
             if (statistic === 'Percent of Population') {
@@ -135,29 +151,29 @@ filterForm.addEventListener('change', (event) => {
     setStateColors(statistic, color);
 });
 
-const updateTooltip = function(stateAbbv) {
-    tooltipName.textContent = stateAbbv;
-    percentOfPopulation.textContent = getStateInfo(stateAbbv, 'Percent of Population');
-    medHouseIncome.textContent = getStateInfo(stateAbbv, 'Median Household Income');
+const updateTooltip = function(stateAbbv, num) {
+    tooltipName[num].textContent = stateAbbv;
+    percentOfPopulation[num].textContent = getStateInfo(stateAbbv, 'Percent of Population');
+    medHouseIncome[num].textContent = getStateInfo(stateAbbv, 'Median Household Income');
 }
 
 // listen for when user selects an option in dropdown menu to highlight correct state and update tooltip
 selectEl.addEventListener('change', function() {
     // loop through elements to find state with id matching abbv chosen in select menu and highlight its border
-    for (let i = 0; i < stateShapeList.length; i++) {
-        if (stateShapeList[i].id === selectEl.value || selectEl.value === 'DC') {
+    for (let i = 0; i < stateList.length; i++) {
+        if (stateList[i].id === selectEl.value || selectEl.value === 'DC') {
             // remove any present border highlighting from previously selected state
             setBorderHighlight(currentState);
 
             // enter details of newly selected state into tooltip
-            updateTooltip(selectEl.value);
+            updateTooltip(selectEl.value, 1);
 
             // assign state element chosen by user to currentState variable
             if (selectEl.value === 'DC') {
                 currentState = dcEl;
             }
             // if user didn't select DC
-            else currentState = stateShapeList[i];
+            else currentState = stateList[i];
 
             // highlight the new state element's border
             setBorderHighlight(currentState);
@@ -201,5 +217,35 @@ const setTop5 = (statistic) => {
         thirdCardValue.textContent = `$${sortedArr[2][0]}`;
         fourthCardValue.textContent = `$${sortedArr[3][0]}`;
         fifthCardValue.textContent = `$${sortedArr[4][0]}`;
+    }
+}
+
+const setPosition = (x, y) => {
+    tooltip.style.left = `${x + 10}px`;
+    tooltip.style.top = `${y + 10}px`;
+}
+
+const setDesktopFunctionality = () => {
+    if (window.innerWidth >= 992) {
+        stateList.forEach((item) => {
+            if (isStateEl(item)) {
+                if (item.id === 'DC1') item = dcEl;
+                item.addEventListener('mouseenter', (e) => {
+                    setBorderHighlight(item);
+                    tooltip.style.opacity = '1';
+                    if (item.id === 'DC2') {
+                        updateTooltip('DC', 0);
+                    } else updateTooltip(item.id, 0);
+                    setPosition(e.clientX, e.clientY + window.scrollY);
+                });
+                item.addEventListener('mousemove', (e) => {
+                    setPosition(e.clientX, e.clientY + window.scrollY);
+                });
+                item.addEventListener('mouseleave', (e) => {
+                    setBorderHighlight(item);
+                    tooltip.style.opacity = '0';
+                });
+            }
+        });
     }
 }

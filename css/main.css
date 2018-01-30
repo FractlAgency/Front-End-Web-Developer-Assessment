@@ -29,10 +29,7 @@ path, circle {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* height: 300px; */
     opacity: .75;
-    /* position: absolute; */
-    /* width: 100%; */
     z-index: 1;
 }
 
@@ -57,22 +54,35 @@ path, circle {
     background: transparent;
 }
 
+.map-container {
+    position: relative;
+}
+
 .svg-container {
-	position: relative;
-	padding-bottom: 80%;
-    max-width: 100%;
+	/* position: relative; */
+	/* padding-bottom: 80%; */
+
 }
 
 .svg-content {
-	position: absolute;
+	/* position: absolute;
 	top: 0;
-	left: 0;
+	left: 0; */
+    max-width: 100%;
 }
 
 .infotip {
     background: #1E2126;
     display: inline-block;
 }
+    .infotip--desktop {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        transition: opacity 1s;
+        z-index: 10;
+    }
     .infotip__name {
         font-size: 1.2rem;
     }
@@ -85,16 +95,12 @@ path, circle {
     font-size: .8rem;
 }
 
-.state-is-active {
-    stroke: #d3d3d3;
-    stroke-width: 3;
-}
-
-
-
-
 
 @media screen and (min-width: 992px) {
+    .infotip--desktop {
+        display: block;
+    }
+
     .svg-container {
         margin-bottom: -133px;
     }
@@ -106,6 +112,12 @@ path, circle {
         margin-bottom: -58px;
     }
 
+}
+
+@media screen and (min-width: 992px) {
+    path, circle {
+        transition: fill 1s, fill-opacity 1s, stroke 1s, stroke-width .75s;
+    }
 }
 
 @media screen and (min-width: 1200px) {
