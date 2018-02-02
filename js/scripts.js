@@ -16,9 +16,10 @@ const stateMap = document.querySelector('.svg-container');
 let currentState = '';
 
 // elements for tooltip values (mobile and desktop)
-let tooltipName = document.querySelectorAll('.js-tooltip-name');
-let percentOfPopulation = document.querySelectorAll('.js-pop-percent');
-let medHouseIncome = document.querySelectorAll('.js-med-house-income');
+const tooltipAbbv = document.querySelectorAll('.js-tooltip-abbv');
+const tooltipName = document.querySelectorAll('.js-tooltip-name')
+const percentOfPopulation = document.querySelectorAll('.js-pop-percent');
+const medHouseIncome = document.querySelectorAll('.js-med-house-income');
 
 // tooltip element for desktop devices
 const tooltip = document.querySelector('.infotip--desktop');
@@ -152,7 +153,8 @@ filterForm.addEventListener('change', (event) => {
 });
 
 const updateTooltip = function(stateAbbv, num) {
-    tooltipName[num].textContent = stateAbbv;
+    tooltipAbbv[num].textContent = stateAbbv;
+    tooltipName[num].textContent = getStateInfo(stateAbbv, 'State');
     percentOfPopulation[num].textContent = getStateInfo(stateAbbv, 'Percent of Population');
     medHouseIncome[num].textContent = getStateInfo(stateAbbv, 'Median Household Income');
 }
