@@ -101,8 +101,6 @@ const highlightInitialState = () => {
         currentState = document.querySelector('#AK');
         setBorderHighlight(currentState);
     }
-
-
 }
 
 // give each state shape element a fill color and opacity corresponding to the current data filter
@@ -232,6 +230,7 @@ const setDesktopFunctionality = () => {
         stateList.forEach((item) => {
             if (isStateEl(item)) {
                 if (item.id === 'DC1') item = dcEl;
+                // highlight state border and let tooltip fade in when user puts cursor over mouse
                 item.addEventListener('mouseenter', (e) => {
                     setBorderHighlight(item);
                     tooltip.style.opacity = '1';
@@ -240,9 +239,11 @@ const setDesktopFunctionality = () => {
                     } else updateTooltip(item.id, 0);
                     setPosition(e.clientX, e.clientY + window.scrollY);
                 });
+                // update tooltip's position as user moves mouse inside a state
                 item.addEventListener('mousemove', (e) => {
                     setPosition(e.clientX, e.clientY + window.scrollY);
                 });
+                // let state border and tooltip to fade out when user takes cursor off state
                 item.addEventListener('mouseleave', (e) => {
                     setBorderHighlight(item);
                     tooltip.style.opacity = '0';
