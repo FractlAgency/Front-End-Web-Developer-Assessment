@@ -21,6 +21,20 @@ path, circle {
     z-index: 10;
 }
 
+.piechart-link {
+    position: absolute;
+    color: #fff;
+    right: .5rem;
+    top: .5rem;
+    background: #007bff;
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    font-size: 14px;
+    opacity: .7;
+    text-decoration: none;
+    z-index: 100;
+}
+
 .bg-banner {
     background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
     width: 100%;

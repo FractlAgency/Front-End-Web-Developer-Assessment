@@ -23,10 +23,16 @@ d3.csv("https://raw.githubusercontent.com/brandnk/Front-End-Web-Developer-Assess
             }]
         },
         // Configuration options go here
-        options: {}
+        options: {
+            legend: {
+                labels: {
+                    fontColor: "#fff"
+                }
+            }
+        }
     });
 
-    
+
 
     const ctx2 = document.getElementById('chart2').getContext('2d');
     let chart2 = new Chart(ctx2, {
@@ -46,7 +52,13 @@ d3.csv("https://raw.githubusercontent.com/brandnk/Front-End-Web-Developer-Assess
             }]
         },
         // Configuration options go here
-        options: {}
+        options: {
+            legend: {
+                labels: {
+                    fontColor: "#fff"
+                }
+            }
+        }
     });
 });
 
