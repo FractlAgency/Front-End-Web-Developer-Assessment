@@ -34,6 +34,10 @@ h3 {
 
     }
 
+.wrapper {
+    margin: auto;
+}
+
 .filter {
     margin-bottom: 3rem;
     text-align: center;
@@ -52,18 +56,39 @@ h3 {
         margin-right: 1.5rem;
     }
 
+.graph {
+    max-width: 450px;
+}
 
-[data-age-group="1"] {
+.graph:nth-child(even) {
     margin-bottom: 3rem;
 }
 
+.graph[data-gender="men"] {
+    display: none;
+}
 
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 
 
 
 
 @media screen and (min-width: 369px) {
     .graph {
-        margin: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .graph {
+        /* float: left; */
+
+        margin-left: auto;
+        margin-right: auto;
     }
 }
