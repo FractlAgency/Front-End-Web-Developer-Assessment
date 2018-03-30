@@ -1,0 +1,55 @@
+.google-visualization-tooltip{
+    width:50% !important;
+    border: 1px solid lightgrey !important;
+  
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+#hero {
+   background: linear-gradient(
+      rgba(255,255,255,.5),
+      rgba(255,255,255,.9)),
+   url(../assets/img/background-image.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+}
+
+hr {
+width: 25%;
+margin: 45px auto;
+}
+
+h2 > span {
+   display: block;
+}
+
+ .highcharts-button {
+   visibility: hidden !important;
+}
+
+.nav-link.active {
+   background-color: #e95122!important ;
+}
+
+.nav-link {
+   background-color: lightgrey;
+}
+
+
+/*.google-visualization-tooltip{
+   position:fixed !important;
+   bottom:10000px !important;
+   left:50% !important;
+   margin:500px 0 0 0 !important;
+  }*/
