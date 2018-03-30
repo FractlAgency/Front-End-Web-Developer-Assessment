@@ -1,42 +1,44 @@
 
-//Method 1 from csv//
-//not getting dimension //
-
-// google.charts.load('current', {
-//     callback: function () {
-//       $.get("data/data-states.csv", function(csvString) {
-//         var csvData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar}); 
+google.charts.load('current', {
+    callback: function () {
+      $.get("/data-states.csv", function(csvString) {
+        var csvData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar}); 
   
-//         var data = new google.visualization.arrayToDataTable(csvData);
+        var data = new google.visualization.arrayToDataTable(csvData);
   
-//         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         
-//         var options = {
-//             region: 'US',
-//             resolution:'provinces',
-//             dimensions: 'Percent of Population',
-//             colors: ['e8b9ab','#e95122'],
-//             tooltip: {
-//             isHtml: true},
-//             }
+        var options = {
+            region: 'US',
+            resolution:'provinces',
+            colors: ['#00FF00','#0000FF'],
+            tooltip: {
+            isHtml: true},
+            }
 
-//             var view = new google.visualization.DataView(data);
-//             view.setColumns([0, {
-//             type: 'string',
-//             label: 'Total Staff',
-//             calc: function (dt, row) {
-//                 return {
-//                     v: dt.getValue(row, 1),
-//                     f: 'State:' + dt.getFormattedValue(row, 1) + ' Percent of Population: ' + dt.getFormattedValue(row, 2) + ' Median Household Income: ' + dt.getFormattedValue(row, 3) + ' Percent of Income: ' + dt.getFormattedValue(row, 4)
-//                 }
-//             }
-//             }]);    
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, {
+            type: 'string',
+            label: 'Percent of Population',
+            calc: function (dt, row) {
+                return {
+                    v: dt.getValue(row, 1),
+                    f: 'State: ' 
+                    + dt.getFormattedValue(row, 1) + ' Percent of Population: ' 
+                    + dt.getFormattedValue(row, 2) + ' Median Household Income: ' 
+                    + dt.getFormattedValue(row, 3) + ' Percent of Income: ' 
+                    + dt.getFormattedValue(row, 4)
+                }
+            }
+            }]);    
             
-//         chart.draw(view, options);   
-//       });
-//     },
-//     packages: ['geochart']
-//   });
+        chart.draw(view, options);   
+      });
+    },
+    packages: ['geochart']
+  });
+
+
 
 
 //Method 2 ajax //
@@ -58,7 +60,7 @@ function drawStatesMap() {
           url: "data/state.json",
           dataType: "JSON"
         }).done(function(data) {
-                var statesArray = [["State", "Median Household Income" +"Percent of Income"]];
+                var statesArray = [["State", "Median Household Income:" +"" +"Percent of Income"]];
 
                 $.each(data.states, function() {
                     var stateitem = [this.State, this[dimension]];
