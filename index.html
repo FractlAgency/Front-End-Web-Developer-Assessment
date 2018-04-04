@@ -72,58 +72,86 @@
         </div>
       </div>           
      
-       <section id="pie-charts py-5">
+     <section id="pie-charts py-5">
 
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-sm-12 text-center">
-              <h2 class="h3">State of Preparedness by Gender<span>
-                and Age Group
-              </span></h2>
-              <p class="small text-muted font-italic">(click button to toggle between stats)</p>
-            <hr>
-            </div>
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-sm-12 text-center">
+            <h2 class="h3">State of Preparedness by Gender<span>
+              and Age Group
+            </span></h2>
+            <p class="small text-muted font-italic">(click button to toggle between stats)</p>
+          <hr>
           </div>
-        </div>  <!-- container -->
-        <div class="container pie_tabs">
-          <ul class="nav nav-pills mb-3 d-flex justify-content-center " id="pills-tab" role="tablist">
-            <li class="nav-item px-2">
-              <a class="nav-link text-white active" id="pills-pieWomen-tab" data-toggle="pill" href="#pills-pieWomen" role="tab" aria-controls="pills-home" aria-expanded="true">Women Stats</a>
-            </li>
+        </div>
+      </div>  <!-- container -->
+      <div class="container pie_tabs">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center " id="pills-tab" role="tablist">
+          <li class="nav-item px-2">
+            <a class="nav-link text-white active" id="pills-pieWomen-tab" data-toggle="pill" href="#pills-pieWomen" role="tab" aria-controls="pills-home" aria-expanded="true">Women Stats</a>
+          </li>
 
-            <li class="nav-item px-2">
-              <a class="nav-link  text-white" id="pills-profile-tab" data-toggle="pill" href="#pills-pieMen" role="tab" aria-controls="pills-profile" aria-expanded="true">Men Stats</a>
-            </li>
-          </ul><!-- nav nav-pills -->
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-pieWomen" role="tabpanel" aria-labelledby="pills-pieWomen-tab">
-            <!-- Piechart Set 1 -->
-              <div id="Us-Map" class="container pt-5">
-                <div class="row">
-                    <!-- insert piecharts here -->
-                    <div id="women_pieChart1" class="col-lg-6">
-                    </div>
-                    <div id="women_pieChart2" class="col-lg-6">
-                    </div>
+          <li class="nav-item px-2">
+            <a class="nav-link  text-white" id="pills-profile-tab" data-toggle="pill" href="#pills-pieMen" role="tab" aria-controls="pills-profile" aria-expanded="true">Men Stats</a>
+          </li>
+        </ul><!-- nav nav-pills -->
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-pieWomen" role="tabpanel" aria-labelledby="pills-pieWomen-tab">
+
+          <!-- Piechart Set 1 -->
+            <div id="Us-Map" class="container pt-5">
+              <div class="row">
+                  <!-- insert piecharts here -->
+
+                   
+                <div class="col-lg-6 text-center"> 
+                  <h4 class="h5">State of Preparedness of Women<span>
+                    Ages 19 to 27 </span></h4>
+                  <p class="small text-muted font-italic">(data visualization using D3 piecharts.<span>Data from attached csv file on project folder)</p>
+                  <div id="women_pieChart1"></div>
                 </div>
-              </div> 
-            </div><!-- tab-pane fade show active -->     
-            <div class="tab-pane fade show" id="pills-pieMen" role="tabpanel" aria-labelledby="pills-pieMen-tab">
-              <!-- Piechart Set 2 -->
-              <div id="Us-Map" class="container pt-5">
-                <div class="row">
-                    <!-- insert piecharts here -->
-                    <div id="men_pieChart1" class="col-lg-6">
-                    </div>
-                    <div id="men_pieChart2" class="col-lg-6">
-                    </div>
+                  
+                <div class="col-lg-6 text-center">
+                   <h4 class="h5">State of Preparedness of Women<span>
+                    Ages 28 to 36 </span></h4>
+                  <p class="small text-muted font-italic">(data visualization using D3 piecharts.<span>Data from attached csv file on project folder)</span></p>
+                 
+                  <div id="women_pieChart2"></div>
+                </div>              
+              </div>
+            </div> 
+          </div><!-- tab-pane fade show active -->  
+
+          <div class="tab-pane fade show" id="pills-pieMen" role="tabpanel" aria-labelledby="pills-pieMen-tab">
+
+            <!-- Piechart Set 2 -->
+            <div id="Us-Map" class="container pt-5">
+              <div class="row">
+                  <!-- insert piecharts here -->
+
+                   
+                <div class="col-lg-6 text-center"> 
+                  <h4 class="h5">State of Preparedness of Men<span>
+                    Ages 19 to 27 </span></h4>
+                  <p class="small text-muted font-italic">((data visualization using D3 piecharts.<span>Data from attached csv file on project folder)</p>
+                  <div id="men_pieChart1"></div>
                 </div>
-              </div> 
-            </div><!-- tab-pane fade show -->
-          </div><!-- tab-content -->
-        </div>  <!-- container --> 
-      
-      </section><!-- id="pie-charts -->
+                  
+                <div class="col-lg-6 text-center">
+                   <h4 class="h5">State of Preparedness of Men<span>
+                    Ages 28 to 36 </span></h4>
+                  <p class="small text-muted font-italic">(data visualization using D3 piecharts.<span>Data from attached csv file on project folder)</p>
+                 
+                  <div id="men_pieChart2"></div>
+                 </div>              
+              </div>
+            </div> 
+          </div><!-- tab-pane fade show -->
+
+        </div><!-- tab-content -->
+      </div>  <!-- container --> 
+    
+    </section><!-- id="pie-charts -->
 
 
     <!-- Optional JavaScript -->
@@ -131,12 +159,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <!-- jquery to run method 3 map -->
     <script src="js/jquery.csv.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <!-- d3  -->
+    <script src="https://d3js.org/d3.v4.min.js" data-semver="4.0.0" data-require="d3@*"></script>
+
+    <script type="text/javascript" src="../js/women19to27.js"></script>
+    <script type="text/javascript" src="../js/women28to36.js"></script>
+    <script type="text/javascript" src="../js/men19to27.js" ></script> 
+    <script type="text/javascript" src="../js/men28to36.js" ></script>
 
     <script src="js/main.js"></script>
   </body>

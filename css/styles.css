@@ -9,6 +9,10 @@ body {
    padding: 0;
 }
 
+span {
+  display: block;;
+}
+
 #hero {
    background: linear-gradient(
       rgba(255,255,255,.5),
@@ -30,7 +34,7 @@ width: 25%;
 margin: 45px auto;
 }
 
-h2 > span {
+h2 > span, h4 > span {
    display: block;
 }
 
@@ -46,10 +50,55 @@ h2 > span {
    background-color: lightgrey;
 }
 
+/* for D# charts styling */
 
-/*.google-visualization-tooltip{
-   position:fixed !important;
-   bottom:10000px !important;
-   left:50% !important;
-   margin:500px 0 0 0 !important;
-  }*/
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+.arc2 text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc2 path {
+  stroke: #fff;
+}
+
+#men_pieChart1, #men_pieChart2, #women_pieChart1, #women_pieChart2  {
+  height: 360px;
+  margin: 0 auto;                                               
+  position: relative;
+  width: 360px;
+}
+
+.tooltipMen1, .tooltipMen2, .tooltipWomen1, .tooltipWomen2  {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  display: none;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+}
+.legend {
+  font-size: 12px;
+}
+rect {
+  cursor: pointer;                                              
+  stroke-width: 2;
+}
+rect.disabled {                                                 
+  fill: transparent !important;                                 
+}                                                               
+ 
