@@ -1,0 +1,362 @@
+{"states": 
+
+  [
+    {
+      "StateAbbv": "AK",
+      "State": "Alaska",
+      "Percent of Population": 46,
+      "Median Household Income": "$75,723",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "AL",
+      "State": "Alabama",
+      "Percent of Population": 47,
+      "Median Household Income": "$47,221",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "AR",
+      "State": "Arkansas",
+      "Percent of Population": 44,
+      "Median Household Income": "$45,907",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "AZ",
+      "State": "arizona",
+      "Percent of Population": 44,
+      "Median Household Income": "$57,100",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "CA",
+      "State": "California",
+      "Percent of Population": 46,
+      "Median Household Income": "$66,637",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "CO",
+      "State": "Colorado",
+      "Percent of Population": 52,
+      "Median Household Income": "$70,566",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "CT",
+      "State": "Connecticut",
+      "Percent of Population": 54,
+      "Median Household Income": "$75,923",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "DC",
+      "State": "District of Columbia",
+      "Percent of Population": 51,
+      "Median Household Income": "$70,982",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "DE",
+      "State": "Delaware",
+      "Percent of Population": 47,
+      "Median Household Income": "$58,046",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "FL",
+      "State": "Florida",
+      "Percent of Population": 42,
+      "Median Household Income": "$51,176",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "GA",
+      "State": "Georgia",
+      "Percent of Population": 49,
+      "Median Household Income": "$53,527",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "HI",
+      "State": "Hawaii",
+      "Percent of Population": 55,
+      "Median Household Income": "$72,133",
+      "Percent of Income": "1%"
+    },
+    {
+      "StateAbbv": "IA",
+      "State": "Iowa",
+      "Percent of Population": 54,
+      "Median Household Income": "$59,094",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "ID",
+      "State": "Idaho",
+      "Percent of Population": 48,
+      "Median Household Income": "$56,564",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "IL",
+      "State": "Illinois",
+      "Percent of Population": 51,
+      "Median Household Income": "$61,386",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "IN",
+      "State": "Indiana",
+      "Percent of Population": 52,
+      "Median Household Income": "$56,094",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "KS",
+      "State": "Kansas",
+      "Percent of Population": 53,
+      "Median Household Income": "$56,810",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "KY",
+      "State": "Kentucky",
+      "Percent of Population": 44,
+      "Median Household Income": "$45,369",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "LA",
+      "State": "Louisiana",
+      "Percent of Population": 42,
+      "Median Household Income": "$42,196",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "MA",
+      "State": "Massachusetts",
+      "Percent of Population": 54,
+      "Median Household Income": "$72,266",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "MD",
+      "State": "Maryland",
+      "Percent of Population": 54,
+      "Median Household Income": "$73,760",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "ME",
+      "State": "Maine",
+      "Percent of Population": 49,
+      "Median Household Income": "$50,856",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "MI",
+      "State": "Michigan",
+      "Percent of Population": 51,
+      "Median Household Income": "$57,091",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "MN",
+      "State": "Minnesota",
+      "Percent of Population": 55,
+      "Median Household Income": "$70,218",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "MO",
+      "State": "Missouri",
+      "Percent of Population": 51,
+      "Median Household Income": "$55,016",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "MS",
+      "State": "Mississippi",
+      "Percent of Population": 42,
+      "Median Household Income": "$41,099",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "MT",
+      "State": "Montana",
+      "Percent of Population": 43,
+      "Median Household Income": "$57,075",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "NC",
+      "State": "North Carolina",
+      "Percent of Population": 45,
+      "Median Household Income": "$53,764",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "ND",
+      "State": "North Dakota",
+      "Percent of Population": 55,
+      "Median Household Income": "$60,184",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "NE",
+      "State": "Nebraska",
+      "Percent of Population": 55,
+      "Median Household Income": "$59,374",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "NH",
+      "State": "New Hampshire",
+      "Percent of Population": 58,
+      "Median Household Income": "$76,260",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "NJ",
+      "State": "New Jersey",
+      "Percent of Population": 55,
+      "Median Household Income": "$68,468",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "NM",
+      "State": "New Mexico",
+      "Percent of Population": 36,
+      "Median Household Income": "$48,451",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "NV",
+      "State": "Nevada",
+      "Percent of Population": 50,
+      "Median Household Income": "$55,431",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "NY",
+      "State": "New York",
+      "Percent of Population": 50,
+      "Median Household Income": "$61,437",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "OH",
+      "State": "Ohio",
+      "Percent of Population": 51,
+      "Median Household Income": "$53,985",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "OK",
+      "State": "Oklahoma",
+      "Percent of Population": 48,
+      "Median Household Income": "$50,943",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "OR",
+      "State": "Oregon",
+      "Percent of Population": 46,
+      "Median Household Income": "$59,135",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "PA",
+      "State": "Pennsylvania",
+      "Percent of Population": 53,
+      "Median Household Income": "$60,979",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "RI",
+      "State": "Rhode Island",
+      "Percent of Population": 51,
+      "Median Household Income": "$61,528",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "SC",
+      "State": "South Carolina",
+      "Percent of Population": 46,
+      "Median Household Income": "$54,336",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "SD",
+      "State": "South Dakota",
+      "Percent of Population": 49,
+      "Median Household Income": "$57,450",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "TN",
+      "State": "Tennessee",
+      "Percent of Population": 46,
+      "Median Household Income": "$51,344",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "TX",
+      "State": "Texas",
+      "Percent of Population": 49,
+      "Median Household Income": "$58,146",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "UT",
+      "State": "Utah",
+      "Percent of Population": 60,
+      "Median Household Income": "$67,481",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "VA",
+      "State": "Virginia",
+      "Percent of Population": 55,
+      "Median Household Income": "$66,451",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "VT",
+      "State": "Vermont",
+      "Percent of Population": 47,
+      "Median Household Income": "$60,837",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "WA",
+      "State": "Washington",
+      "Percent of Population": 49,
+      "Median Household Income": "$70,310",
+      "Percent of Income": "1%"
+    },
+    {
+      "StateAbbv": "WI",
+      "State": "Wisconsin",
+      "Percent of Population": 56,
+      "Median Household Income": "$59,817",
+      "Percent of Income": "2%"
+    },
+    {
+      "StateAbbv": "WV",
+      "State": "West Virginia",
+      "Percent of Population": 43,
+      "Median Household Income": "$44,354",
+      "Percent of Income": "3%"
+    },
+    {
+      "StateAbbv": "WY",
+      "State": "Wyoming",
+      "Percent of Population": 55,
+      "Median Household Income": "$57,829",
+      "Percent of Income": "2%"
+    }
+  ]
+}

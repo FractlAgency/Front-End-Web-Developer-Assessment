@@ -1,0 +1,104 @@
+.google-visualization-tooltip{
+    width:50% !important;
+    border: 1px solid lightgrey !important;
+  
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+span {
+  display: block;;
+}
+
+#hero {
+   background: linear-gradient(
+      rgba(255,255,255,.5),
+      rgba(255,255,255,.9)),
+   url(../assets/img/background-image.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+}
+
+hr {
+width: 25%;
+margin: 45px auto;
+}
+
+h2 > span, h4 > span {
+   display: block;
+}
+
+ .highcharts-button {
+   visibility: hidden !important;
+}
+
+.nav-link.active {
+   background-color: #e95122!important ;
+}
+
+.nav-link {
+   background-color: lightgrey;
+}
+
+/* for D# charts styling */
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+.arc2 text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc2 path {
+  stroke: #fff;
+}
+
+#men_pieChart1, #men_pieChart2, #women_pieChart1, #women_pieChart2  {
+  height: 360px;
+  margin: 0 auto;                                               
+  position: relative;
+  width: 360px;
+}
+
+.tooltipMen1, .tooltipMen2, .tooltipWomen1, .tooltipWomen2  {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  display: none;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+}
+.legend {
+  font-size: 12px;
+}
+rect {
+  cursor: pointer;                                              
+  stroke-width: 2;
+}
+rect.disabled {                                                 
+  fill: transparent !important;                                 
+}                                                               
+ 
