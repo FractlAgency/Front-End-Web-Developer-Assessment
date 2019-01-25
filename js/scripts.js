@@ -250,7 +250,9 @@ const setDesktopFunctionality = () => {
                 });
                 // let state border and tooltip to fade out when user takes cursor off state
                 item.addEventListener('mouseleave', (e) => {
-                    setBorderHighlight(item);
+                    if (e.target.style.strokeWidth === '3') {
+                        setBorderHighlight(item);
+                    }
                     tooltip.style.opacity = '0';
                 });
             }
