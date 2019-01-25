@@ -89,10 +89,15 @@ const setBorderHighlight = (stateEl) => {
     if (stateEl.style.strokeWidth === '' || stateEl.style.strokeWidth === '0') {
         stateEl.style.stroke = '#d3d3d3';
         stateEl.style.strokeWidth = '3';
-    } else {
+               
+    } else if (stateEl.style.strokeWidth === '3') {
         stateEl.style.stroke = 'transparent';
         stateEl.style.strokeWidth = '0';
     }
+    // else {
+    //     stateEl.style.stroke = 'transparent';
+    //     stateEl.style.strokeWidth = '0';
+    // }
 }
 
 // highlights alaska state shape when page loads
