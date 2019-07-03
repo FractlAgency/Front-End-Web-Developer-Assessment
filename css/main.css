@@ -1,0 +1,142 @@
+
+html {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+body {
+    background: #252831;
+}
+
+select {
+    max-width: 300px;
+}
+
+path, circle {
+    transition: fill 1s, fill-opacity 1s, stroke 1s, stroke-width 2s;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.piechart-link {
+    position: absolute;
+    color: #fff;
+    right: .5rem;
+    top: .5rem;
+    background: #007bff;
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    font-size: 14px;
+    opacity: .7;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.bg-banner {
+    background: linear-gradient(transparent, #252831), url("../img/sunset-flag.jpg");
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: .8;
+    z-index: 1;
+}
+
+.header__title {
+    border-bottom: 1px solid rgba(255,255,255, .4);
+    font-weight: 200;
+}
+
+.text-transparent {
+    opacity: .65;
+}
+
+.card {
+    background: transparent;
+}
+
+    .card-subtitle {
+        font-size: 18px;
+    }
+
+.list-group-item {
+    background: transparent;
+}
+
+.map-container {
+    position: relative;
+}
+
+.svg-container {
+	/* position: relative; */
+	/* padding-bottom: 80%; */
+
+}
+
+.svg-content {
+	/* position: absolute;
+	top: 0;
+	left: 0; */
+    max-width: 100%;
+}
+
+.infotip {
+    background: #1E2126;
+    display: inline-block;
+}
+    .infotip--desktop {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        transition: opacity 1s;
+        z-index: 10;
+    }
+    .infotip__name {
+        font-size: 1.2rem;
+    }
+    .infotip__info {
+        font-size: .8rem;
+    }
+
+
+.copyright {
+    font-size: .8rem;
+}
+
+
+@media screen and (min-width: 992px) {
+    .infotip--desktop {
+        display: block;
+    }
+
+    .svg-container {
+        margin-bottom: -133px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .svg-container {
+        /* padding-bottom: 92%; */
+        margin-bottom: -58px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    path, circle {
+        transition: fill 1s, fill-opacity 1s, stroke 1s, stroke-width .75s;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .bg-banner {
+        background-position: initial;
+        height: 500px;
+    }
+}
